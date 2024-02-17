@@ -2,21 +2,16 @@ import "@thirdweb-dev/react-native-compat";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-import {
-  isClip,
-  displayOverlay,
-  setSharedCredential,
-  getSharedCredential,
-} from "react-native-app-clip";
+import { isClip } from "react-native-app-clip";
+import MainApp from "@/MainApp";
+import AppClip from "@/AppClip";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      {isClip() && <Text>App is running as a clip</Text>}
-      <StatusBar style="auto" />
-    </View>
-  );
+  if (isClip()) {
+    return <AppClip />;
+  } else {
+    return <MainApp />;
+  }
 }
 
 const styles = StyleSheet.create({
