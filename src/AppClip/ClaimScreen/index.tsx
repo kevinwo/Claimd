@@ -1,11 +1,17 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
+import WelcomeText from './WelcomeText';
+import Button from '@/components/Button';
 
 function ClaimScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Claim</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <WelcomeText />
+
+      <View style={{ width: '90%' }}>
+        <Button title="Claim It" onPress={() => {}} />
+      </View>
+    </SafeAreaView>
   );
 }
 
