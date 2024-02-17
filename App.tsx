@@ -1,3 +1,4 @@
+import "@thirdweb-dev/react-native-compat";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
