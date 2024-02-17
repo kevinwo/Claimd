@@ -1094,6 +1094,8 @@ PODS:
     - React-jsi (= 0.73.4)
     - React-logger (= 0.73.4)
     - React-perflogger (= 0.73.4)
+  - ReactNativeAppClip (0.2.4):
+    - ExpoModulesCore
   - RNCAsyncStorage (1.22.0):
     - React-Core
   - RNSVG (13.14.0):
@@ -1166,6 +1168,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ReactNativeAppClip (from `../node_modules/react-native-app-clip/ios`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -1303,6 +1306,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeAppClip:
+    :path: "../node_modules/react-native-app-clip/ios"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNSVG:
@@ -1377,11 +1382,12 @@ SPEC CHECKSUMS:
   React-runtimescheduler: ed48e5faac6751e66ee1261c4bd01643b436f112
   React-utils: 6e5ad394416482ae21831050928ae27348f83487
   ReactCommon: 840a955d37b7f3358554d819446bffcf624b2522
+  ReactNativeAppClip: 3a02ab2d6144ddb51ee90b3ea4b09d64a09bed83
   RNCAsyncStorage: c43e6d71e13bb4748503797784839e0fbbf89d56
   RNSVG: d00c8f91c3cbf6d476451313a18f04d220d4f396
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 1b901a6d6eeba4e8a2e8f308f708691cdb5db312
 
-PODFILE CHECKSUM: d8590239214f5c147808c4c1b70fd3ba6835515e
+PODFILE CHECKSUM: e6e3240f1468af22bbdca98b3ca63b20e85f58fb
 
 COCOAPODS: 1.14.3

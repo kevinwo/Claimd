@@ -27,6 +27,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "react-native-app-clip",
+        {
+          "name": "Claimd Clip",
+          "groupIdentifier": "group.com.kevinwolkober.Claimd",
+          "deploymentTarget": "16.0",
+          "appleSignin": true
+        }
+      ]
+    ]
   }
 }
