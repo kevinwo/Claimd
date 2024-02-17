@@ -1,12 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import ClaimNavigator from './ClaimNavigator';
 
 const AppClip = () => {
-  return (
-    <View>
-      <Text>Welcome to the App Clip!</Text>
-    </View>
-  );
+  return <ClaimNavigator />;
 };
 
 export default AppClip;
