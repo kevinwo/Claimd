@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { isClip } from "react-native-app-clip";
 import MainApp from "@/MainApp";
 import AppClip from "@/AppClip";
+import ClaimdThirdwebProvider from "@/Thirdweb/ClaimdThirdwebProvider";
 
 function Component() {
   if (isClip) {
@@ -16,7 +17,9 @@ function Component() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Component />
+      <ClaimdThirdwebProvider>
+        <Component />
+      </ClaimdThirdwebProvider>
     </NavigationContainer>
   )
 }
