@@ -18,7 +18,8 @@ enum State {
 const addToAppleWallet = async () => {
   try {
     const result = await WalletManager.addPassFromUrl(
-      'http://localhost:3001/api/getPass'
+      // 'http://localhost:3001/api/getPass'
+      'http://localhost:3001/claimd.pkpass'
     );
     console.log(result);
   } catch (e) {
@@ -43,6 +44,7 @@ function ClaimScreen() {
         try {
           const receipt = await claim()
           console.log("Claimed", receipt)
+          setState(State.Claimed)
         } catch (e) {
           console.error("Failed to claim", e)
         }
@@ -139,7 +141,7 @@ function ClaimScreen() {
           <Button
             title="Download our full app and explore more perks"
             onPress={() => {
-              console.log("Done")
+              console.log("Download app from App Store")
             }}
             type='secondary'
           />

@@ -27,3 +27,9 @@ I've been excited about possible uses for on-chain memberships in real life over
 - Typically an [App Clip](https://developer.apple.com/app-clips/) is built in native Swift using SwiftUI. Given my choice of React Native for the main app, and limited time constraints, I found a very nice library, [react-native-app-clip](https://github.com/bndkt/react-native-app-clip), from which let me load my React Native app code into an App Clip, while allowing conditional execution of code depending on whether I was in the main app or in the App Clip.
 - To be able to trigger the App Clip from my device when on the frontend of my web app post-purchase, I [registered a local experience in iOS developer settings](https://developer.apple.com/documentation/app_clips/testing_the_launch_experience_of_your_app_clip#3671998). (I wanted to upgrade this to a trigger based on QR code, as a consumer might do in real life at a given store post-purchase, but ran out of time.)
 - With the App Clip prompt appearing on frontend load, I then am able to let the user jump instantly into the claim experience.
+
+## Apple Wallet Pass
+
+- An [Apple Wallet Pass](https://developer.apple.com/documentation/walletpasses) can either be added from a static asset, or dynamically generated on the fly before being added.
+- Using [passkit-generator](https://github.com/alexandercerutti/passkit-generator) on the backend, and following through the necessary [signing/certficate steps with Apple](https://developer.apple.com/documentation/walletpasses/building_a_pass#3732524), I am able to generate unique passes for each membership, letting consumers be easily identified for discounts, events, etc. with the business.
+- Using [react-native-wallet-manager](https://github.com/dev-family/react-native-wallet-manager) on the frontend, after fetching the dynamically generated pass data, I can open a modal that renders the pass and allows the user to add it to their Apple Wallet.
