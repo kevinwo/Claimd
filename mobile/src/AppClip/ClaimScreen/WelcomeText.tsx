@@ -47,9 +47,7 @@ const WelcomeText = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingBottom: 48,
   },
   fadeInView: {
     // Adjust as needed for your design

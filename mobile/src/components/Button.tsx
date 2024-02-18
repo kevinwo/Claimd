@@ -73,7 +73,7 @@ const getStyles = (type: string, theme: Theme) => {
   return StyleSheet.create({
     base: {
       padding: 18,
-      borderRadius: 30,
+      borderRadius: 8,
       marginVertical: 5,
       width: '100%',
       alignSelf: 'center',
