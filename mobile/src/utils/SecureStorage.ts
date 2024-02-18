@@ -1,7 +1,7 @@
 import { ISecureStorage } from "@thirdweb-dev/react-core"
 import * as Keychain from 'react-native-keychain'
 
-const PREFIX = "__iykyk__"
+const PREFIX = "__claimd__"
 const ACCESS_GROUP = "group.com.kevinwolkober.Claimd"
 
 export class SecureStorage implements ISecureStorage {
