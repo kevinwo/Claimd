@@ -1,0 +1,50 @@
+{
+	"formatVersion": 1,
+	"passTypeIdentifier": "pass.com.kevinwolkober.Claimd.membership",
+	"serialNumber": "coolshoppass1234",
+	"teamIdentifier": "RBAYG54ZP6",
+	"webServiceURL": "https://192.168.1.254:80/",
+	"authenticationToken": "abcdefghijklmnopqrstuvwxyz1234567890",
+	"relevantDate": "2999-12-08T13:00-08:00",
+	"organizationName": "Cool Shop",
+	"description": "Cool Shop Membership",
+	"foregroundColor": "rgb(255, 255, 255)",
+	"backgroundColor": "rgb(60, 65, 76)",
+	"storeCard": {
+		"headerFields": [
+			{
+				"key": "member",
+				"label": "Member",
+				"value": "Kevin Wolkober"
+			}
+		],
+		"primaryFields": [
+			{
+				"key": "memberID",
+				"label": "Member ID",
+				"value": "1234"
+			}
+		],
+		"secondaryFields": [
+			{
+				"key": "memberSince",
+				"label": "Member Since",
+				"value": "February 17, 2024"
+			}
+		],
+		"auxiliaryFields": [
+			{
+				"key": "memberLevel",
+				"label": "Member Level",
+				"value": "Gold"
+			}
+		],
+		"backFields": [
+			{
+				"key": "terms",
+				"label": "Terms and Conditions",
+				"value": "Some terms and conditions"
+			}
+		]
+	}
+}

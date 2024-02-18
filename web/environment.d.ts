@@ -1,0 +1,14 @@
+namespace NodeJS {
+  interface ProcessEnv {
+    NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN: string;
+    NEXT_PUBLIC_THIRDWEB_CLIENT_ID: string;
+    THIRDWEB_API_KEY: string;
+    THIRDWEB_WALLET_PRIVATE_KEY: string;
+    THIRDWEB_AUTH_PRIVATE_KEY: string;
+    DROP_CONTRACT_ADDRESS: string;
+    PKPASS_SIGNER_CERTIFICATE_BASE_64: string;
+    PKPASS_SIGNER_KEY_BASE_64: string;
+    PKPASS_SIGNER_KEY_PASSWORD: string;
+    PKPASS_WWDR_CERTIFICATE_BASE_64: string;
+  }
+}
