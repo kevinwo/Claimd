@@ -13,7 +13,7 @@
 		26A2E683A1B18E43E3D78BB8 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B8AC41F467536DFFC28A9B /* ExpoModulesProvider.swift */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		5BC7AE47AD1D35513439AB04 /* libPods-ClaimdClip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF58FB1F3AEE0F6678B0DA1 /* libPods-ClaimdClip.a */; };
-		6D3FDB5ED9E9443EAC5CACD2 /* ClaimdClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = F41BC2147C864F1898AA2FED /* ClaimdClip.app */; };
+		6D3FDB5ED9E9443EAC5CACD2 /* Claimd Clip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = F41BC2147C864F1898AA2FED /* Claimd Clip.app */; };
 		860A8D0B2B944EBC9C0F0A5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B28A1AC84343E98A9BCD91 /* Images.xcassets */; };
 		96905EF65AED1B983A6B3ABC /* libPods-Claimd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-Claimd.a */; };
 		98DC0A3F47384E4CBA062257 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C90AC764175B25A21B1 /* main.m */; };
@@ -42,7 +42,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
 			dstSubfolderSpec = 16;
 			files = (
-				6D3FDB5ED9E9443EAC5CACD2 /* ClaimdClip.app in Embed App Clips */,
+				6D3FDB5ED9E9443EAC5CACD2 /* Claimd Clip.app in Embed App Clips */,
 			);
 			name = "Embed App Clips";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,7 +74,7 @@
 		DEF58FB1F3AEE0F6678B0DA1 /* libPods-ClaimdClip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ClaimdClip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6C28479F31A5E75BF34206 /* Pods-ClaimdClip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClaimdClip.debug.xcconfig"; path = "Target Support Files/Pods-ClaimdClip/Pods-ClaimdClip.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F41BC2147C864F1898AA2FED /* ClaimdClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; fileEncoding = 9; includeInIndex = 0; name = ClaimdClip.app; path = "Claimd Clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41BC2147C864F1898AA2FED /* Claimd Clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; fileEncoding = 9; includeInIndex = 0; path = "Claimd Clip.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Claimd/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		FF27FA6F61B4424AAD0531C0 /* Claimd-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "Claimd-Bridging-Header.h"; path = "Claimd/Claimd-Bridging-Header.h"; sourceTree = "<group>"; };
 		FF5C8C90AC764175B25A21B1 /* main.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* Claimd.app */,
-				F41BC2147C864F1898AA2FED /* ClaimdClip.app */,
+				F41BC2147C864F1898AA2FED /* Claimd Clip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 			);
 			name = ClaimdClip;
 			productName = ClaimdClip;
-			productReference = F41BC2147C864F1898AA2FED /* ClaimdClip.app */;
+			productReference = F41BC2147C864F1898AA2FED /* Claimd Clip.app */;
 			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
 /* End PBXNativeTarget section */

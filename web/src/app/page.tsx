@@ -1,8 +1,7 @@
 'use client';
-import Image from "next/image";
 
 const onClick = () => {
-  alert("You clicked the button!");
+  window.location.reload();
 }
 
 export default function Home() {
@@ -31,7 +30,7 @@ export default function Home() {
           onClick={onClick}
           className="bg-green-500 hover:bg-green-600 text-2xl text-white font-medium py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transform transition-colors duration-150 cursor-pointer"
         >
-          Get Started
+          Get Yours
         </button>
       </div>
 
