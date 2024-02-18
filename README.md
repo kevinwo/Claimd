@@ -11,7 +11,7 @@ Claimd is a mobile-first membership claiming application built during the [Febru
 
 # Demo
 
-https://github.com/kevinwo/Claimd/assets/371957/fbcbb1b7-344d-4f54-aff7-1eae2515bad9
+https://github.com/kevinwo/Claimd/assets/371957/6822be4a-3d70-49ac-ac1b-cb7020af438a
 
 # Goals
 
