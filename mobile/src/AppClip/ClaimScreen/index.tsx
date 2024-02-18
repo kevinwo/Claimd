@@ -3,12 +3,41 @@ import { View, Text, SafeAreaView } from 'react-native';
 import WelcomeText from './WelcomeText';
 import Button from '@/components/Button';
 import TextInput from '@/components/TextInput';
-import { embeddedWallet, useSmartWallet } from '@thirdweb-dev/react-native';
+import { embeddedWallet, useConnectionStatus, useLogin, useSmartWallet, useUser } from '@thirdweb-dev/react-native';
 import Config from 'react-native-config';
+import SpinningCard from './SpinningCard';
 
 function ClaimScreen() {
+  const connectionStatus = useConnectionStatus()
+  const { login } = useLogin()
+  const { isLoggedIn } = useUser()
   const [isClaiming, setIsClaiming] = useState(false);
   const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    console.log("Claiming status:", isClaiming, connectionStatus, isLoggedIn)
+    if (isClaiming && isLoggedIn) {
+      console.log("User is logged in")
+    }
+  }, [isLoggedIn, isClaiming])
+
+  useEffect(() => {
+    console.log("Connection status:", isClaiming, connectionStatus, isLoggedIn)
+    if (isClaiming && connectionStatus === "connected" && !isLoggedIn) {
+      const performLogin = async () => {
+        console.log("Logging in")
+        try {
+          await login()
+        } catch (e) {
+          console.error("Failed to login", e)
+        }
+      }
+
+      setTimeout(() => {
+        performLogin()
+      }, 1000)
+    }
+  }, [connectionStatus, isClaiming])
 
   const { connect: connectSmartWallet } = useSmartWallet(embeddedWallet({
     auth: {
@@ -20,10 +49,16 @@ function ClaimScreen() {
     gasless: true,
   })
 
-  const claim = useCallback(async () => {
-    setIsClaiming(true);
+  const prepareToClaim = useCallback(async () => {
+    setIsClaiming(true)
+    console.log(connectionStatus)
 
-    await signInWithApple()
+    if (connectionStatus === "disconnected") {
+      console.log("Connecting with Apple")
+      await signInWithApple()
+    } else {
+      console.log("User is already connected")
+    }
   }, []);
 
   const signInWithApple = async () => {
@@ -49,13 +84,13 @@ function ClaimScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {isClaiming && <Text>Claiming...</Text>}
+      {isClaiming && <SpinningCard />}
       {!isClaiming && <WelcomeText />}
 
       <View style={{ width: '90%' }}>
         <Button
           title={isClaiming ? "Claiming..." : "Claim It"}
-          onPress={claim}
+          onPress={prepareToClaim}
           indeterminateProgress={isClaiming}
         />
       </View>

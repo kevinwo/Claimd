@@ -67,6 +67,7 @@
 		77E985D78EF742EF8EA62C04 /* AppDelegate.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = AppDelegate.mm; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-Claimd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Claimd.release.xcconfig"; path = "Target Support Files/Pods-Claimd/Pods-Claimd.release.xcconfig"; sourceTree = "<group>"; };
 		8BA3127EA0344CE2933B58FD /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "Claimd/noop-file.swift"; sourceTree = "<group>"; };
+		A579AE212B81BC0E00853C65 /* Claimd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Claimd.entitlements; path = Claimd/Claimd.entitlements; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = Claimd/SplashScreen.storyboard; sourceTree = "<group>"; };
 		B7B8AC41F467536DFFC28A9B /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-ClaimdClip/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		13B07FAE1A68108700A75B9A /* Claimd */ = {
 			isa = PBXGroup;
 			children = (
+				A579AE212B81BC0E00853C65 /* Claimd.entitlements */,
 				BB2F792B24A3F905000567C9 /* Supporting */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,

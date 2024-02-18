@@ -17,6 +17,7 @@ interface Props {
 const ClaimdThirdwebProvider = ({ children }: Props) => {
   return (
     <ThirdwebProvider
+      autoConnectTimeout={30000}
       supportedChains={[Sepolia, BaseSepoliaTestnet]}
       activeChain={Sepolia}
       clientId={Config.THIRDWEB_CLIENT_ID}
