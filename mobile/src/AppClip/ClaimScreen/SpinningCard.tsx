@@ -27,7 +27,9 @@ const SpinningCard: React.FC = () => {
           transform: [{ rotateY: spin }],
         }}
       >
-        <Text>Weeeeeeee</Text>
+        <View style={styles.textWrapper}>
+          <Text style={styles.text}>O</Text>
+        </View>
       </Animated.View>
     </View>
   );
@@ -40,10 +42,22 @@ const styles = StyleSheet.create({
   card: {
     width: 150,
     height: 250,
-    backgroundColor: 'grey',
+    backgroundColor: '#cccccc',
     backfaceVisibility: 'hidden',
+    elevation: 20,
+    shadowColor: '#52006A',
+    borderRadius: 16,
     // Add more styling to match the design of the card provided
   },
+  textWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 60,
+    fontWeight: 'bold',
+  }
 });
 
 export default SpinningCard;
