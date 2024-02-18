@@ -1,8 +1,17 @@
 ![Claimd: Memberships for You](https://github.com/kevinwo/Claimd/blob/main/ClamdWordmarkLogo.jpg?raw=true)
 
+- [What is Claimd?](#what-is-claimd)
+- [Demo](#demo)
+- [Goals](#goals)
+- [How I Built This](#how-i-built-this)
+
 # What is Claimd?
 
 Claimd is a mobile-first membership claiming application built during the [February 2024 Thirdweb Consumer Crypto Hackathon](https://thirdweb.com/hackathon/consumer-crypto). It lets customers simultaneously onboard to a business's mobile app using an App Clip and claim a membership after making a purchase, all in under 60 seconds.
+
+# Demo
+
+https://github.com/kevinwo/Claimd/assets/371957/fbcbb1b7-344d-4f54-aff7-1eae2515bad9
 
 # Goals
 
