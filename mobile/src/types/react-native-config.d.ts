@@ -4,6 +4,7 @@ declare module 'react-native-config' {
     THIRDWEB_AUTH_DOMAIN: string;
     THIRDWEB_AUTH_URL: string;
     SMART_WALLET_FACTORY_ADDRESS: string;
+    DROP_CONTRACT_ADDRESS: string;
   }
 
   export const Config: NativeConfig

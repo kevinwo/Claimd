@@ -6,23 +6,35 @@ import TextInput from '@/components/TextInput';
 import { embeddedWallet, useConnectionStatus, useLogin, useSmartWallet, useUser } from '@thirdweb-dev/react-native';
 import Config from 'react-native-config';
 import SpinningCard from './SpinningCard';
+import useClaimMembership from '@/hooks/useClaimMembership';
 
 function ClaimScreen() {
   const connectionStatus = useConnectionStatus()
   const { login } = useLogin()
   const { isLoggedIn } = useUser()
+  const { claim } = useClaimMembership()
+
   const [isClaiming, setIsClaiming] = useState(false);
-  const [email, setEmail] = useState('');
 
   useEffect(() => {
     console.log("Claiming status:", isClaiming, connectionStatus, isLoggedIn)
     if (isClaiming && isLoggedIn) {
-      console.log("User is logged in")
+      console.log("Claiming...")
+
+      const performClaim = async () => {
+        try {
+          const receipt = await claim()
+          console.log("Claimed", receipt)
+        } catch (e) {
+          console.error("Failed to claim", e)
+        }
+      }
+
+      performClaim()
     }
   }, [isLoggedIn, isClaiming])
 
   useEffect(() => {
-    console.log("Connection status:", isClaiming, connectionStatus, isLoggedIn)
     if (isClaiming && connectionStatus === "connected" && !isLoggedIn) {
       const performLogin = async () => {
         console.log("Logging in")
