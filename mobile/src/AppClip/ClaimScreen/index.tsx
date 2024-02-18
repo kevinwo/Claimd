@@ -2,12 +2,12 @@ import { useCallback, useEffect, useState } from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
 import WelcomeText from './WelcomeText';
 import Button from '@/components/Button';
-import TextInput from '@/components/TextInput';
 import { embeddedWallet, useConnectionStatus, useLogin, useSmartWallet, useUser } from '@thirdweb-dev/react-native';
 import Config from 'react-native-config';
 import SpinningCard from './SpinningCard';
 import useClaimMembership from '@/hooks/useClaimMembership';
 import ClaimedText from './ClaimedText';
+import WalletManager from 'react-native-wallet-manager';
 
 enum State {
   Pending,
@@ -15,8 +15,15 @@ enum State {
   Claimed
 }
 
-const addToAppleWallet = () => {
-  console.log("Adding to Apple Wallet")
+const addToAppleWallet = async () => {
+  try {
+    const result = await WalletManager.addPassFromUrl(
+      'http://localhost:3001/api/getPass'
+    );
+    console.log(result);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function ClaimScreen() {
