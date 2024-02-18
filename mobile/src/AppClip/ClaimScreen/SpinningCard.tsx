@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, StyleSheet, Text, View } from 'react-native';
+import { Animated, StyleSheet, View, Image } from 'react-native';
 
 const SpinningCard: React.FC = () => {
   const spinValue = useRef(new Animated.Value(0)).current;
@@ -28,7 +28,7 @@ const SpinningCard: React.FC = () => {
         }}
       >
         <View style={styles.textWrapper}>
-          <Text style={styles.text}>O</Text>
+          <Image style={styles.image} source={require('./logo.png')} />
         </View>
       </Animated.View>
     </View>
@@ -39,6 +39,11 @@ const styles = StyleSheet.create({
   container: {
     paddingBottom: 20,
   },
+  image: {
+    width: '100%',
+    height: '25%',
+    resizeMode: 'contain',
+  },
   card: {
     width: 150,
     height: 250,
@@ -47,7 +52,6 @@ const styles = StyleSheet.create({
     elevation: 20,
     shadowColor: '#52006A',
     borderRadius: 16,
-    // Add more styling to match the design of the card provided
   },
   textWrapper: {
     flex: 1,
