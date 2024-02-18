@@ -1,18 +1,29 @@
 ![Claimd: Memberships for You](https://github.com/kevinwo/Claimd/blob/main/ClamdWordmarkLogo.jpg?raw=true)
 
-Claimd is a mobile-first membership claiming application built during the [February 2024 Thirdweb Consumer Crypto Hackathon](https://thirdweb.com/hackathon/consumer-crypto).
+# What is Claimd?
+
+Claimd is a mobile-first membership claiming application built during the [February 2024 Thirdweb Consumer Crypto Hackathon](https://thirdweb.com/hackathon/consumer-crypto). It lets customers simultaneously onboard to a business's mobile app using an App Clip and claim a membership after making a purchase, all in under 60 seconds.
 
 # Goals
 
-I've been excited about possible uses for on-chain memberships in real life over the past year, and have been thinking about what to build around this. As part of the hackathon, I decided to focus on membership onboarding, and see if I could achieve the following with Thirdweb on iOS:
+I've been excited about possible uses for on-chain memberships in real life over the past year, and have been thinking about what to build around this to making creation and access easier for consumers, businesses, and their partners. As part of the hackathon, I decided to focus on membership onboarding, and see if I could achieve the following with Thirdweb on iOS:
 
-- [x] One
-- [x] Two
-- [x] Three
-- [ ] Four
+- [x] Provide a simple and familiar entry point to claim a membership after making a purchase with a shop
+- [x] Let users both create an account with the business and claim an on-chain membership in one button click
+- [x] Add their membership to their Apple Wallet
 
-# Tech Stack
+# How I Built This
 
-- React Native
-- Thirdweb SDK
-- Next.js
+## Membership Claim
+
+- I knew I wanted this to be mobile-first, so I started with a new Expo-based React Native app, particularly since the [Thirdweb SDK](https://portal.thirdweb.com/react-native) is already React Native-friendly.
+- Because I didn't want the user to have to think about auth, I leveraged [Thirdweb Auth](https://thirdweb.com/auth) and Sign in with Apple, making signing in a breeze, but also allowing for privacy if the user wants to hide their email address.
+  - To support auth and look to the future of managing user data, I stood up a Next.js application to supplement the backend auth portion.
+- I also didn't want the user to have to think about wallets, so I used [Thirdweb Embedded Wallets](https://thirdweb.com/embedded-wallets) to make it easy to tie the user's email to a unique wallet.
+- Given each membership claim costs gas to claim, and therefore involves crypto, I used account abstraction via [Thirdweb Smart Wallet](https://thirdweb.com/account-abstraction) to handle gas on the user's behalf, and let them glide through claiming their membership.
+
+## App Clip
+
+- Typically an [App Clip](https://developer.apple.com/app-clips/) is built in native Swift using SwiftUI. Given my choice of React Native for the main app, and limited time constraints, I found a very nice library, [react-native-app-clip](https://github.com/bndkt/react-native-app-clip), from which let me load my React Native app code into an App Clip, while allowing conditional execution of code depending on whether I was in the main app or in the App Clip.
+- To be able to trigger the App Clip from my device when on the frontend of my web app post-purchase, I [registered a local experience in iOS developer settings](https://developer.apple.com/documentation/app_clips/testing_the_launch_experience_of_your_app_clip#3671998). (I wanted to upgrade this to a trigger based on QR code, as a consumer might do in real life at a given store post-purchase, but ran out of time.)
+- With the App Clip prompt appearing on frontend load, I then am able to let the user jump instantly into the claim experience.
