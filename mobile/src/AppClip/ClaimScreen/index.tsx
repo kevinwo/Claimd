@@ -7,6 +7,17 @@ import { embeddedWallet, useConnectionStatus, useLogin, useSmartWallet, useUser 
 import Config from 'react-native-config';
 import SpinningCard from './SpinningCard';
 import useClaimMembership from '@/hooks/useClaimMembership';
+import ClaimedText from './ClaimedText';
+
+enum State {
+  Pending,
+  Claiming,
+  Claimed
+}
+
+const addToAppleWallet = () => {
+  console.log("Adding to Apple Wallet")
+}
 
 function ClaimScreen() {
   const connectionStatus = useConnectionStatus()
@@ -14,11 +25,11 @@ function ClaimScreen() {
   const { isLoggedIn } = useUser()
   const { claim } = useClaimMembership()
 
-  const [isClaiming, setIsClaiming] = useState(false);
+  const [state, setState] = useState<State>(State.Pending);
 
   useEffect(() => {
-    console.log("Claiming status:", isClaiming, connectionStatus, isLoggedIn)
-    if (isClaiming && isLoggedIn) {
+    console.log("Claiming status:", state, connectionStatus, isLoggedIn)
+    if (state == State.Claiming && isLoggedIn) {
       console.log("Claiming...")
 
       const performClaim = async () => {
@@ -32,10 +43,10 @@ function ClaimScreen() {
 
       performClaim()
     }
-  }, [isLoggedIn, isClaiming])
+  }, [isLoggedIn, state])
 
   useEffect(() => {
-    if (isClaiming && connectionStatus === "connected" && !isLoggedIn) {
+    if (state == State.Claiming && connectionStatus === "connected" && !isLoggedIn) {
       const performLogin = async () => {
         console.log("Logging in")
         try {
@@ -49,7 +60,7 @@ function ClaimScreen() {
         performLogin()
       }, 1000)
     }
-  }, [connectionStatus, isClaiming])
+  }, [connectionStatus, state])
 
   const { connect: connectSmartWallet } = useSmartWallet(embeddedWallet({
     auth: {
@@ -62,7 +73,7 @@ function ClaimScreen() {
   })
 
   const prepareToClaim = useCallback(async () => {
-    setIsClaiming(true)
+    setState(State.Claiming)
     console.log(connectionStatus)
 
     if (connectionStatus === "disconnected") {
@@ -96,16 +107,37 @@ function ClaimScreen() {
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {isClaiming && <SpinningCard />}
-      {!isClaiming && <WelcomeText />}
+      {state == State.Claiming && <SpinningCard />}
+      {state == State.Pending && <WelcomeText />}
 
-      <View style={{ width: '90%' }}>
-        <Button
-          title={isClaiming ? "Claiming..." : "Claim It"}
-          onPress={prepareToClaim}
-          indeterminateProgress={isClaiming}
-        />
-      </View>
+      {state !== State.Claimed && (
+        <View style={{ width: '90%' }}>
+          <Button
+            title={state == State.Claiming ? "Claiming..." : "Claim It"}
+            onPress={prepareToClaim}
+            indeterminateProgress={state == State.Claiming}
+          />
+        </View>
+      )}
+
+      {state == State.Claimed && <>
+        <ClaimedText />
+
+        <View style={{ width: '90%' }}>
+          <Button
+            title="Add to Apple Wallet"
+            onPress={addToAppleWallet}
+          />
+
+          <Button
+            title="Download our full app and explore more perks"
+            onPress={() => {
+              console.log("Done")
+            }}
+            type='secondary'
+          />
+        </View>
+      </>}
     </SafeAreaView>
   );
 }

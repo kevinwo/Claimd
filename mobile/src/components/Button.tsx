@@ -85,7 +85,7 @@ const getStyles = (type: string, theme: Theme) => {
       backgroundColor: 'transparent',
     },
     text: {
-      color: type === 'primary' ? '#fff' : colors.text,
+      color: type === 'primary' ? '#fff' : 'darkslategray',
       fontWeight: 'bold',
       fontSize: 18,
       textAlign: 'center',
